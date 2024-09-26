@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    width: 550px;
+    width: 60   0px;
     height: 900px;
     background-color: #222222;
     padding: 40px;
@@ -36,6 +36,8 @@ body {
     height: 100px;
     object-fit: cover;
 }
+
+
 
 .profile-info {
     display: flex;
@@ -101,6 +103,15 @@ h2 {
     width: 20%;
     text-align: right;
 } 
+.img{
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.img:hover{
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
+    z-index: 10; /* Asegura que la imagen agrandada esté encima */
+    
+}
 a{
     color: #b0b0b0;
     text-decoration: none;
@@ -136,20 +147,43 @@ a:hover{
     width: 100%;
 }
 
+/* Para las imágenes de "My Works" */
 .carousel-img {
-    width: 200px; /* Ajuste para un tamaño mayor por defecto */
-    height: 130px; /* Ajuste para un tamaño mayor por defecto */
+    width: 150px; /* Tamaño más grande */
+    height: 150px;
+    border-radius: 15px; /* Bordes redondeados */
+    object-fit: cover;
+    background-color: transparent;
     margin-right: 10px;
-    transition: transform 0.3s ease, z-index 0.3s ease; /* Añadir una transición fluida */
-    border-radius: 10px;
-    z-index: 1; /* Controlar la superposición */
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    z-index: 1;
 }
 
 .carousel:hover .carousel-img:hover {
-    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
-    z-index: 10; /* Asegurarse de que la imagen ampliada esté encima de las demás */
+    transform: scale(1.1);
+    z-index: 10;
 }
 
+/* Nueva sección de tecnologías */
+.technologies {
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Espacio entre logos */
+}
+
+.tech-icon {
+    font-size: 30px; /* Tamaño de los logos */
+    color: #b0b0b0; /* Color inicial de los iconos */
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.tech-icon:hover {
+    color: white; /* Cambia el color al pasar el ratón */
+    transform: scale(1.1); /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10; 
+}
 
 .contact a {
     color: white; /* Hereda el color del texto padre */
