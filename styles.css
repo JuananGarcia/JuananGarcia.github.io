@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background-color: #000000;
+    color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 700px;
+    height: 800px;
+    background-color: #000000;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaciado entre la imagen y el texto */
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-info h1 {
+    font-size: 22px; /* Tamaño de fuente más grande */
+    font-weight: 600;
+    margin: 0;
+}
+
+.profile-info p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #b0b0b0; /* Texto gris claro */
+}
+
+.profile-link {
+    display: inline-block;
+    background-color: #2b2b2b;
+    color: white;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 20px; /* Esquinas redondeadas */
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+.section {
+    margin-top: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.experience .job,
+.works .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-info {
+    width: 20%;
+    text-align: left;
+}
+
+.center-info {
+    width: 60%;
+    color: #EDEDED;
+    text-align: center;
+}
+
+.right-info {
+    width: 20%;
+    text-align: right;
+} a{
+    color: #b0b0b0;
+    text-decoration: none;
+} 
+a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.job p, .project p {
+    margin: 0;
+}
+
+.left-info p{
+    color:#b0b0b0;
+}
+
+.center-info p {
+    color: white;
+    
+}
+
+.right-info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+.carousel {
+    display: flex;
+    overflow: visible; /* Permitir que las imágenes ampliadas sobresalgan */
+    width: 100%;
+}
+
+.carousel-img {
+    width: 200px; /* Ajuste para un tamaño mayor por defecto */
+    height: 130px; /* Ajuste para un tamaño mayor por defecto */
+    margin-right: 10px;
+    transition: transform 0.3s ease, z-index 0.3s ease; /* Añadir una transición fluida */
+    border-radius: 10px;
+    z-index: 1; /* Controlar la superposición */
+}
+
+.carousel:hover .carousel-img:hover {
+    transform: scale(3.5); /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10; /* Asegurarse de que la imagen ampliada esté encima de las demás */
+}
+
+
+.contact a {
+    color: white; /* Hereda el color del texto padre */
+    text-decoration: underline; /* Elimina el subrayado */
+}
+
+.content a:hover {
+    color: #6e99f7; /* Cambia el color cuando el ratón esté sobre el enlace */
+}
+
+.contact h3 {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #b0b0b0;
+}
+
+.contact a:hover {
+    text-decoration: none;
+}
+
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+    color:#b0b0b0; /* White color for the icon */
+  }
+
+  .social-icon.linkedin:hover svg{
+    color: #0077b5;
+    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10; 
+  }
+  .social-icon.twitter:hover svg{
+    color: #1da1f2;
+    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10; 
+  }
+  .social-icon.instagram:hover svg{
+    color: #e4405f;
+    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10; 
+  }
+  .social-icon.github:hover svg{
+    color: purple;
+    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10; 
+  }
