@@ -15,9 +15,9 @@ body {
     font-size: 13px;
     line-height: 1.6;
     background-color: #2D3541;
-    background: linear-gradient(rgba(45, 53, 65, 0.7), rgba(45, 53, 65, 0.7)),
+    background: linear-gradient(rgba(45, 53, 65, 0.9), rgba(45, 53, 65, 0.9)),
         /* Overlay */
-        url('fondo6.gif');
+        url('images/fondo8_1.gif');
     background-size: cover;
     /* La imagen de fondo se ajusta para cubrir toda la pantalla */
     background-attachment: fixed;
@@ -49,12 +49,12 @@ body {
     object-fit: cover;
 }
 
-/* Estilos de la imagen inicial */
+/* Contenedor de la imagen */
 .image-container {
     position: relative;
     width: 100px;
     height: 100px;
-
+    perspective: 1000px; /* Añade perspectiva para los efectos 3D */
 }
 
 .image-container img {
@@ -63,33 +63,46 @@ body {
     height: 100px;
     object-fit: cover;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    /* Suaviza la transición */
     backface-visibility: hidden;
-    /* Oculta la parte trasera al girar */
-}
-
-.image-container img.hover-image {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    /* Oculta la segunda imagen por defecto */
-    transform: rotateY(180deg);
-    /* Rotación inicial de 180 grados */
 }
 
-/* Efecto hover */
+/* La imagen de hover está inicialmente oculta */
+.image-container img.hover-image {
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+/* Efecto hover para dispositivos con puntero (escritorio) */
 .image-container:hover img {
     transform: rotateY(180deg);
-    /* Gira la imagen original */
 }
 
 .image-container:hover img.hover-image {
     opacity: 1;
-    /* Hace visible la segunda imagen */
     transform: rotateY(0deg);
-    /* Restablece la rotación de la segunda imagen */
 }
+
+/* Solución para dispositivos táctiles (Safari y otros navegadores móviles) */
+@media (hover: none) {
+    .image-container img.hover-image {
+        opacity: 0; /* Mantener la segunda imagen oculta inicialmente */
+        transform: none; /* No aplicar la rotación */
+    }
+
+    /* No usar hover en dispositivos táctiles, usar eventos táctiles */
+    .image-container img:active {
+        transform: rotateY(180deg);
+    }
+
+    .image-container img:active.hover-image {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
 
 
 
