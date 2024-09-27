@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="container">
       <div class="profile">
         <div class="profile-header">
-          <img class="profile-img" src="perfil1.png" alt="Profile Photo">
+          <div class="image-container">
+            <!-- Imagen original -->
+            <img src="perfil1.png" alt="Original Image">
+            <!-- Imagen que aparece al hacer hover -->
+            <img src="perfil_pixel.png" alt="Hover Image" class="hover-image">
+          </div>
           <div class="profile-info">
             <h3>Juanan Garcia</h3>
             <p>Murcia, España</p>
@@ -30,7 +36,7 @@
           <div class="experience">
             <div class="job">
               <div class="left-info">
-                <p>2023 — Now</p>
+                <p>2022 — Now</p>
               </div>
               <div class="center-info">
                 <p>Software Developer at <a href="https://stvgestion.com"
@@ -64,6 +70,7 @@
             <i class="devicon-html5-plain tech-icon" title="HTML5"></i>
             <i class="devicon-css3-plain tech-icon" title="CSS3"></i>
             <i class="devicon-javascript-plain tech-icon" title="JavaScript"></i>
+            <i class="devicon-firebase-plain tech-icon" title="Firebase"></i>
             <i class="devicon-python-plain tech-icon" title="Python"></i>
             <i class="devicon-dotnetcore-plain tech-icon" title=".NET"></i>
             <i class="devicon-microsoftsqlserver-plain tech-icon" title="SQL Server"></i>
@@ -126,7 +133,7 @@
               <div class="right-info">
                 <div class="carousel">
                   <img class="carousel-img"
-                    src="" alt="Work Image 1">
+                    src="Angel_aviles.png" alt="Work Image 1">
                 </div>
               </div>
             </div>
@@ -152,7 +159,7 @@
               <div class="right-info">
                 <div class="carousel">
                   <img class="carousel-img"
-                    src="" alt="Work Image 1">
+                    src="portfolio.png" alt="Work Image 1">
                 </div>
               </div>
             </div>
@@ -191,9 +198,11 @@
                   d="M9 18c-4.51 2-5-2-7-2" /></svg>
             </a>
           </div>
+          
         </div>
       </div>
-
+      
       <script src="script.js"></script>
     </body>
+    
   </html>

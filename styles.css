@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,27 +8,38 @@
 
 body {
     font-family: 'Poppins', 'Inter', sans-serif;
-    background-color: #222222;
     color: white;
     display: flex;
     justify-content: center;
     padding: 40px;
     font-size: 13px;
     line-height: 1.6;
+    background-color: #2D3541;
+    background: linear-gradient(rgba(45, 53, 65, 0.7), rgba(45, 53, 65, 0.7)),
+        /* Overlay */
+        url('fondo6.gif');
+    background-size: cover;
+    /* La imagen de fondo se ajusta para cubrir toda la pantalla */
+    background-attachment: fixed;
+    /* El fondo se queda fijo al hacer scroll */
+
 }
 
 .container {
-    width: 60   0px;
-    height: 900px;
-    background-color: #222222;
+    width: 60 0px;
+    height: 800px;
     padding: 40px;
     border-radius: 15px;
+    background-color: #2D3541;
+    /* Color principal por defecto */
+
 }
 
 .profile-header {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espaciado entre la imagen y el texto */
+    gap: 20px;
+    /* Espaciado entre la imagen y el texto */
 }
 
 .profile-img {
@@ -35,6 +47,48 @@ body {
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+/* Estilos de la imagen inicial */
+.image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+}
+
+.image-container img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    /* Suaviza la transición */
+    backface-visibility: hidden;
+    /* Oculta la parte trasera al girar */
+}
+
+.image-container img.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* Oculta la segunda imagen por defecto */
+    transform: rotateY(180deg);
+    /* Rotación inicial de 180 grados */
+}
+
+/* Efecto hover */
+.image-container:hover img {
+    transform: rotateY(180deg);
+    /* Gira la imagen original */
+}
+
+.image-container:hover img.hover-image {
+    opacity: 1;
+    /* Hace visible la segunda imagen */
+    transform: rotateY(0deg);
+    /* Restablece la rotación de la segunda imagen */
 }
 
 
@@ -46,7 +100,8 @@ body {
 }
 
 .profile-info h1 {
-    font-size: 22px; /* Tamaño de fuente más grande */
+    font-size: 22px;
+    /* Tamaño de fuente más grande */
     font-weight: 600;
     color: white;
     margin: 0;
@@ -55,7 +110,8 @@ body {
 .profile-info p {
     font-size: 14px;
     margin: 5px 0;
-    color: #b0b0b0; /* Texto gris claro */
+    color: #b0b0b0;
+    /* Texto gris claro */
 }
 
 .profile-link {
@@ -64,7 +120,8 @@ body {
     color: white;
     text-decoration: none;
     padding: 4px 10px;
-    border-radius: 20px; /* Esquinas redondeadas */
+    border-radius: 20px;
+    /* Esquinas redondeadas */
     font-size: 14px;
     margin-top: 8px;
 }
@@ -102,36 +159,42 @@ h2 {
 .right-info {
     width: 20%;
     text-align: right;
-} 
-.img{
+}
+
+.img {
     transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
-.img:hover{
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
-    z-index: 10; /* Asegura que la imagen agrandada esté encima */
-    
+.img:hover {
+    transform: scale(1.1);
+    /* Aumenta ligeramente el tamaño al hacer hover */
+    z-index: 10;
+    /* Asegura que la imagen agrandada esté encima */
+
 }
-a{
+
+a {
     color: #b0b0b0;
     text-decoration: none;
-} 
-a:hover{
+}
+
+a:hover {
     color: white;
     text-decoration: underline;
 }
 
-.job p, .project p {
+.job p,
+.project p {
     margin: 0;
 }
 
-.left-info p{
-    color:#b0b0b0;
+.left-info p {
+    color: #b0b0b0;
 }
 
 .center-info p {
     color: white;
-    
+
 }
 
 .right-info img {
@@ -143,26 +206,32 @@ a:hover{
 
 .carousel {
     display: flex;
-    overflow: visible; /* Permitir que las imágenes ampliadas sobresalgan */
+    overflow: visible;
+    /* Permitir que las imágenes ampliadas sobresalgan */
     width: 100%;
 }
 
 /* Para las imágenes de "My Works" */
 .carousel-img {
-    width: 150px; /* Tamaño más grande */
-    height: 150px;
-    border-radius: 15px; /* Bordes redondeados */
+    width: 120px;
+    /* Ajusta el tamaño de la imagen */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    border-radius: 10px;
+    /* Bordes redondeados */
     object-fit: cover;
-    background-color: transparent;
-    margin-right: 10px;
-    transition: transform 0.3s ease, z-index 0.3s ease;
-    z-index: 1;
+    margin-right: 20px;
+    /* Espaciado entre la imagen y el texto */
 }
 
+/* Efecto hover */
 .carousel:hover .carousel-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.8);
+    /* Amplía la imagen considerablemente */
     z-index: 10;
+    /* Asegura que la imagen ampliada esté por encima de otras */
 }
+
 
 /* Nueva sección de tecnologías */
 .technologies {
@@ -170,28 +239,36 @@ a:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px; /* Espacio entre logos */
+    gap: 15px;
+    /* Espacio entre logos */
 }
 
 .tech-icon {
-    font-size: 30px; /* Tamaño de los logos */
-    color: #b0b0b0; /* Color inicial de los iconos */
+    font-size: 30px;
+    /* Tamaño de los logos */
+    color: #b0b0b0;
+    /* Color inicial de los iconos */
     transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
 .tech-icon:hover {
-    color: white; /* Cambia el color al pasar el ratón */
-    transform: scale(1.1); /* Ampliar considerablemente la imagen al pasar el ratón */
-    z-index: 10; 
+    color: white;
+    /* Cambia el color al pasar el ratón */
+    transform: scale(1.1);
+    /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10;
 }
 
 .contact a {
-    color: white; /* Hereda el color del texto padre */
-    text-decoration: underline; /* Elimina el subrayado */
+    color: white;
+    /* Hereda el color del texto padre */
+    text-decoration: underline;
+    /* Elimina el subrayado */
 }
 
 .content a:hover {
-    color: #6e99f7; /* Cambia el color cuando el ratón esté sobre el enlace */
+    color: #6e99f7;
+    /* Cambia el color cuando el ratón esté sobre el enlace */
 }
 
 .contact h3 {
@@ -209,12 +286,12 @@ a:hover{
 }
 
 
-  .social-icons {
+.social-icons {
     display: flex;
     gap: 1rem;
-  }
-  
-  .social-icon {
+}
+
+.social-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -222,53 +299,64 @@ a:hover{
     height: 40px;
     border-radius: 50%;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .social-icon svg {
+}
+
+.social-icon svg {
     width: 20px;
     height: 20px;
-    color:#b0b0b0; /* White color for the icon */
-  }
+    color: #b0b0b0;
+    /* White color for the icon */
+}
 
-  .social-icon.linkedin:hover svg{
+.social-icon.linkedin:hover svg {
     color: #0077b5;
-    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
-    z-index: 10; 
-  }
-  
-  .social-icon.instagram:hover svg{
-    color: #e4405f;
-    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
-    z-index: 10; 
-  }
-  .social-icon.github:hover svg{
-    color: purple;
-    transform: scale(1.5); /* Ampliar considerablemente la imagen al pasar el ratón */
-    z-index: 10; 
-  }
+    transform: scale(1.5);
+    /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10;
+}
 
-  .container {
-    position: relative; /* Necesario para que el GIF se posicione relativo a este contenedor */
+.social-icon.instagram:hover svg {
+    color: #e4405f;
+    transform: scale(1.5);
+    /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10;
+}
+
+.social-icon.github:hover svg {
+    color: purple;
+    transform: scale(1.5);
+    /* Ampliar considerablemente la imagen al pasar el ratón */
+    z-index: 10;
+}
+
+.container {
+    position: relative;
+    /* Necesario para que el GIF se posicione relativo a este contenedor */
 }
 
 .gif-container {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 70px; /* Ajusta si es necesario */
-    z-index: 1; /* Asegúrate de que el GIF esté sobre el contenido */
+    padding: 70px;
+    /* Ajusta si es necesario */
+    z-index: 1;
+    /* Asegúrate de que el GIF esté sobre el contenido */
 }
 
 .corner-gif {
-    width: 80px;  /* Ajusta el tamaño del GIF */
+    width: 80px;
+    /* Ajusta el tamaño del GIF */
     height: auto;
 }
 
 .link-icon {
-    width: 16px; /* Ajusta el tamaño del icono */
+    width: 16px;
+    /* Ajusta el tamaño del icono */
     height: 16px;
-    margin-left: 5px; /* Espacio entre el texto y el icono */
-    vertical-align: middle; /* Alinea el icono con el texto */
+    margin-left: 5px;
+    /* Espacio entre el texto y el icono */
+    vertical-align: middle;
+    /* Alinea el icono con el texto */
 
-} 
-
+}
