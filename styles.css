@@ -15,7 +15,7 @@ body {
     font-size: 13px;
     line-height: 1.6;
     background-color: #2D3541;
-    background: linear-gradient(rgba(45, 53, 65, 0.8), rgba(45, 53, 65, 0.8)),
+    background: linear-gradient(rgba(45, 53, 65, 0.65), rgba(45, 53, 65, 1)),
         /* Overlay */
         url('images/fondo8_1.gif');
     background-size: cover;
