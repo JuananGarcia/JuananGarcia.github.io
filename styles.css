@@ -15,9 +15,9 @@ body {
     font-size: 13px;
     line-height: 1.6;
     background-color: #2D3541;
-    background: linear-gradient(rgba(45, 53, 65, 0.9), rgba(45, 53, 65, 0.9)),
+    background: linear-gradient(rgba(45, 53, 65, 0.8), rgba(45, 53, 65, 0.8)),
         /* Overlay */
-        url('images/fondo8_1.gif');
+        url('images/fondo1.gif');
     background-size: cover;
     /* La imagen de fondo se ajusta para cubrir toda la pantalla */
     background-attachment: fixed;
