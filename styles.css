@@ -114,15 +114,13 @@ body {
 }
 
 
-
-
 .profile-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.profile-info h1 {
+.profile-info h3 {
     font-size: 22px;
     /* Tamaño de fuente más grande */
     font-weight: 600;
@@ -152,6 +150,7 @@ body {
 
 .section {
     margin-top: 40px;
+    color: white;
 }
 
 h2 {
