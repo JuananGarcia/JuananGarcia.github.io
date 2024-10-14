@@ -32,7 +32,6 @@ body {
     /* La imagen de fondo se ajusta para cubrir toda la pantalla */
     background-attachment: fixed;
     /* El fondo se queda fijo al hacer scroll */
-
 }
 
 .container {
@@ -42,7 +41,6 @@ body {
     border-radius: 15px;
     background-color: #2D3541;
     /* Color principal por defecto */
-
 }
 
 .profile-header {
@@ -113,7 +111,6 @@ body {
     }
 }
 
-
 .profile-info {
     display: flex;
     flex-direction: column;
@@ -146,7 +143,6 @@ body {
     font-size: 14px;
     margin-top: 8px;
 }
-
 
 .section {
     margin-top: 40px;
@@ -192,7 +188,6 @@ h2 {
     /* Aumenta ligeramente el tamaño al hacer hover */
     z-index: 10;
     /* Asegura que la imagen agrandada esté encima */
-
 }
 
 a {
@@ -216,7 +211,6 @@ a:hover {
 
 .center-info p {
     color: white;
-
 }
 
 .right-info img {
@@ -253,7 +247,6 @@ a:hover {
     z-index: 10;
     /* Asegura que la imagen ampliada esté por encima de otras */
 }
-
 
 /* Nueva sección de tecnologías */
 .technologies {
@@ -306,7 +299,6 @@ a:hover {
 .contact a:hover {
     text-decoration: none;
 }
-
 
 .social-icons {
     display: flex;
@@ -370,15 +362,89 @@ a:hover {
     width: 80px;
     /* Ajusta el tamaño del GIF */
     height: auto;
+    /* Mantiene la proporción */
 }
 
-.link-icon {
-    width: 16px;
-    /* Ajusta el tamaño del icono */
-    height: 16px;
-    margin-left: 5px;
-    /* Espacio entre el texto y el icono */
-    vertical-align: middle;
-    /* Alinea el icono con el texto */
+/* Media query para dispositivos móviles (pantallas más pequeñas de 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        font-size: 12px;
+    }
 
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-info h3 {
+        font-size: 18px;
+    }
+
+    .profile-info p {
+        font-size: 12px;
+    }
+
+    .profile-link {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .section {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .carousel-img {
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .technologies {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tech-icon {
+        font-size: 24px;
+    }
+
+    .social-icons {
+        gap: 0.5rem;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Reduce el tamaño del GIF en móviles */
+    .gif-container {
+        padding: 30px;
+    }
+
+    .corner-gif {
+        width: 60px;
+    }
 }
