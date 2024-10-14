@@ -26,12 +26,9 @@ body {
     line-height: 1.6;
     background-color: #2D3541;
     background: linear-gradient(rgba(45, 53, 65, 0.65), rgba(45, 53, 65, 1)),
-        /* Overlay */
         url('images/fondo8_1.gif');
     background-size: cover;
-    /* La imagen de fondo se ajusta para cubrir toda la pantalla */
     background-attachment: fixed;
-    /* El fondo se queda fijo al hacer scroll */
 }
 
 .container {
@@ -40,14 +37,12 @@ body {
     padding: 40px;
     border-radius: 15px;
     background-color: #2D3541;
-    /* Color principal por defecto */
 }
 
 .profile-header {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* Espaciado entre la imagen y el texto */
 }
 
 .profile-img {
@@ -57,12 +52,11 @@ body {
     object-fit: cover;
 }
 
-/* Contenedor de la imagen */
 .image-container {
     position: relative;
     width: 100px;
     height: 100px;
-    perspective: 1000px; /* Añade perspectiva para los efectos 3D */
+    perspective: 1000px;
 }
 
 .image-container img {
@@ -77,13 +71,11 @@ body {
     left: 0;
 }
 
-/* La imagen de hover está inicialmente oculta */
 .image-container img.hover-image {
     opacity: 0;
     transform: rotateY(180deg);
 }
 
-/* Efecto hover para dispositivos con puntero (escritorio) */
 .image-container:hover img {
     transform: rotateY(180deg);
 }
@@ -93,14 +85,12 @@ body {
     transform: rotateY(0deg);
 }
 
-/* Solución para dispositivos táctiles (Safari y otros navegadores móviles) */
 @media (hover: none) {
     .image-container img.hover-image {
-        opacity: 0; /* Mantener la segunda imagen oculta inicialmente */
-        transform: none; /* No aplicar la rotación */
+        opacity: 0;
+        transform: none;
     }
 
-    /* No usar hover en dispositivos táctiles, usar eventos táctiles */
     .image-container img:active {
         transform: rotateY(180deg);
     }
@@ -119,7 +109,6 @@ body {
 
 .profile-info h3 {
     font-size: 22px;
-    /* Tamaño de fuente más grande */
     font-weight: 600;
     color: white;
     margin: 0;
@@ -129,7 +118,6 @@ body {
     font-size: 14px;
     margin: 5px 0;
     color: #b0b0b0;
-    /* Texto gris claro */
 }
 
 .profile-link {
@@ -139,7 +127,6 @@ body {
     text-decoration: none;
     padding: 4px 10px;
     border-radius: 20px;
-    /* Esquinas redondeadas */
     font-size: 14px;
     margin-top: 8px;
 }
@@ -185,9 +172,7 @@ h2 {
 
 .img:hover {
     transform: scale(1.1);
-    /* Aumenta ligeramente el tamaño al hacer hover */
     z-index: 10;
-    /* Asegura que la imagen agrandada esté encima */
 }
 
 a {
@@ -223,67 +208,49 @@ a:hover {
 .carousel {
     display: flex;
     overflow: visible;
-    /* Permitir que las imágenes ampliadas sobresalgan */
     width: 100%;
 }
 
-/* Para las imágenes de "My Works" */
 .carousel-img {
     width: 120px;
-    /* Ajusta el tamaño de la imagen */
     height: auto;
-    /* Mantiene la proporción de la imagen */
     border-radius: 10px;
-    /* Bordes redondeados */
     object-fit: cover;
     margin-right: 20px;
-    /* Espaciado entre la imagen y el texto */
 }
 
-/* Efecto hover */
 .carousel:hover .carousel-img:hover {
     transform: scale(1.8);
-    /* Amplía la imagen considerablemente */
     z-index: 10;
-    /* Asegura que la imagen ampliada esté por encima de otras */
 }
 
-/* Nueva sección de tecnologías */
 .technologies {
     margin: 10px 0px 0px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    /* Espacio entre logos */
 }
 
 .tech-icon {
     font-size: 30px;
-    /* Tamaño de los logos */
     color: #b0b0b0;
-    /* Color inicial de los iconos */
     transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
 .tech-icon:hover {
     color: white;
-    /* Cambia el color al pasar el ratón */
     transform: scale(1.1);
-    /* Ampliar considerablemente la imagen al pasar el ratón */
     z-index: 10;
 }
 
 .contact a {
     color: white;
-    /* Hereda el color del texto padre */
     text-decoration: underline;
-    /* Elimina el subrayado */
 }
 
 .content a:hover {
     color: #6e99f7;
-    /* Cambia el color cuando el ratón esté sobre el enlace */
 }
 
 .contact h3 {
@@ -319,33 +286,28 @@ a:hover {
     width: 20px;
     height: 20px;
     color: #b0b0b0;
-    /* White color for the icon */
 }
 
 .social-icon.linkedin:hover svg {
     color: #0077b5;
     transform: scale(1.5);
-    /* Ampliar considerablemente la imagen al pasar el ratón */
     z-index: 10;
 }
 
 .social-icon.instagram:hover svg {
     color: #e4405f;
     transform: scale(1.5);
-    /* Ampliar considerablemente la imagen al pasar el ratón */
     z-index: 10;
 }
 
 .social-icon.github:hover svg {
     color: purple;
     transform: scale(1.5);
-    /* Ampliar considerablemente la imagen al pasar el ratón */
     z-index: 10;
 }
 
 .container {
     position: relative;
-    /* Necesario para que el GIF se posicione relativo a este contenedor */
 }
 
 .gif-container {
@@ -353,19 +315,14 @@ a:hover {
     top: 0;
     right: 0;
     padding: 70px;
-    /* Ajusta si es necesario */
     z-index: 1;
-    /* Asegúrate de que el GIF esté sobre el contenido */
 }
 
 .corner-gif {
     width: 80px;
-    /* Ajusta el tamaño del GIF */
     height: auto;
-    /* Mantiene la proporción */
 }
 
-/* Media query para dispositivos móviles (pantallas más pequeñas de 768px) */
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -439,7 +396,6 @@ a:hover {
         height: 18px;
     }
 
-    /* Reduce el tamaño del GIF en móviles */
     .gif-container {
         padding: 30px;
     }
