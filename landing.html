@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgueserías</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png"> <!-- Cambia la ruta a tu icono -->
+
+</head>
+<body>
+    <header>
+        <h1>HAMBURGUESERIAS</h1>
+        <p>Pulsa sobre tu Burger favorita para votar 🍔</p>
+    </header>
+    <section class="burger-grid">
+        <div class="burger-item" onclick="showDetails('Vacania Burger')">
+            <img src="images/vacania.png" alt="Vacania Burger">
+            <h2>VACANIA</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Castillo Encantado')">
+            <img src="images/castillo.png" alt="Castillo Encantado">
+            <h2>CASTILLO ENCANTADO</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Foodbab')">
+            <img src="images/foodbar.png" alt="Foodbab">
+            <h2>FOODBAB</h2>
+        </div>
+        <!-- Añadir más items según sea necesario -->
+        <div class="burger-item" onclick="showDetails('El Rubio')">
+            <img src="images/RUBIO.png" alt="El Rubio">
+            <h2>EL RUBIO</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Monty Burger')">
+            <img src="images/monty.png" alt="Monty Burger">
+            <h2>MONTY BURGER</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('MKT')">
+            <img src="images/mkt.png" alt="MKT">
+            <h2>MKT</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Trafic Burger')">
+            <img src="images/trafic1.png" alt="Trafic Burger">
+            <h2>TRAFIC</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('D2 Street Bar')">
+            <img src="images/D2.png" alt="D2 Street Bar">
+            <h2>D2 STREET BAR</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Blitz')">
+            <img src="images/Blitz.png" alt="Blitz">
+            <h2>BLITZ</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Foodbab')">
+            <img src="images/boca.png" alt="La Boca Te Lia">
+            <h2>LA BOCA TE LIA</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('La Higuerica')">
+            <img src="images/higuerica.png" alt="La Higuerica">
+            <h2>LA HIGUERICA</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Jangueo')">
+            <img src="images/jangueo.png" alt="Jangueo">
+            <h2>JANGUEO</h2>
+        </div>
+        <div class="burger-item" onclick="showDetails('Las Cens de Hidalgo')">
+            <img src="images/cenas.png" alt="Las Cenas de Hidalgo">
+            <h2>LAS CENAS DE HIDALGO</h2>
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

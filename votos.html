@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo de Votos de Hamburgueserías</title>
+    
+    <!-- Enlace a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png"> <!-- Cambia la ruta a tu icono -->
+
+    <style>
+        body {
+            background-color: black; /* Fondo negro */
+            color: white; /* Texto blanco */
+            font-family: 'Agdasima', sans-serif; /* Fuente personalizada */
+            margin: 0;
+            padding: 20px; /* Espaciado */
+            text-align: center; /* Alineación del texto al centro */
+        }
+        h1 {
+            color: #F9B522; /* Título en amarillo */
+            font-size: 2.5em; /* Tamaño del título */
+            margin-bottom: 20px; /* Espaciado inferior */
+        }
+        #conteo-votos {
+            width: 100%; /* Ancho del contenedor */
+            max-width: 600px; /* Ancho máximo del contenedor */
+            margin: 0 auto; /* Centramos el contenedor */
+            text-align: left; /* Alineación a la izquierda para las barras */
+        }
+        .barra {
+            background-color: #F9B522; /* Color de la barra */
+            height: 30px; /* Altura de la barra */
+            border-radius: 5px; /* Bordes redondeados */
+            margin: 10px 0; /* Espaciado entre barras */
+            position: relative; /* Para posicionar el texto dentro */
+            transition: width 0.3s; /* Transición suave para el ancho */
+        }
+        .votos {
+            position: absolute; /* Posicionamiento absoluto */
+            right: 10px; /* Espaciado desde la derecha */
+            top: 50%; /* Centrar verticalmente */
+            transform: translateY(-50%); /* Ajustar verticalmente */
+        }
+        .nombre-hamburgueseria {
+            margin: 5px 0; /* Espaciado vertical */
+            font-weight: bold; /* Negrita */
+        }
+    </style>
+</head>
+<body>
+    <img id="icono" src="logo.png" alt="Icono de Hamburgueserías" style="width: 100px; margin-bottom: 20px; animation: girar 2s linear infinite;"> <!-- Cambia la ruta a tu icono -->
+    
+    <h1>Votos por Hamburguesería</h1>
+    <div id="conteo-votos"></div>
+
+    <script>
+        // URL de la base de datos Firebase
+        const databaseURL = "https://theburgerweek-votos-default-rtdb.europe-west1.firebasedatabase.app/Votaciones.json";
+
+        // Fechas de inicio y fin para filtrar votos
+        const fechaInicio = new Date("2024-10-17T19:00:00Z");
+        const fechaFin = new Date("2024-10-20T17:00:00Z");
+        
+
+        // Función para obtener y contar votos
+        async function obtenerConteoVotos() {
+            try {
+                const response = await fetch(databaseURL);
+                const data = await response.json();
+                const conteo = {};
+
+                // Contar las votaciones por hamburguesería
+                for (const key in data) {
+                    const hamburgueseria = data[key].Hamburguesería;
+                    const timestamp = new Date(data[key].fecha);
+                    console.log(timestamp);
+                    console.log(fechaInicio);
+                    console.log(timestamp >= fechaInicio);
+                    // Filtrar votos dentro del rango de fechas
+                    if (timestamp >= fechaInicio && timestamp <= fechaFin) {
+                        if (!conteo[hamburgueseria]) {
+                            conteo[hamburgueseria] = 0;
+                        }
+                        conteo[hamburgueseria]++;
+                    }
+                }
+
+                // Mostrar el conteo en la página
+                const conteoVotosDiv = document.getElementById('conteo-votos');
+                conteoVotosDiv.innerHTML = ''; // Limpiar contenido previo
+                const maxVotes = Math.max(...Object.values(conteo)); // Obtener el número máximo de votos para calcular el ancho de las barras
+                for (const [hamburgueseria, cantidad] of Object.entries(conteo)) {
+                    // Crear un contenedor para el nombre y la barra
+                    const contenedor = document.createElement('div');
+                    
+                    // Añadir el nombre de la hamburguesería
+                    const nombre = document.createElement('div');
+                    nombre.classList.add('nombre-hamburgueseria');
+                    nombre.textContent = hamburgueseria;
+                    contenedor.appendChild(nombre);
+                    
+                    // Crear la barra de votos
+                    const barra = document.createElement('div');
+                    barra.classList.add('barra');
+                    barra.style.width = `${(cantidad / maxVotes) * 100}%`; // Calcular el ancho relativo de la barra
+                    barra.innerHTML = `<span class="votos">${cantidad}</span>`;
+                    contenedor.appendChild(barra);
+                    
+                    // Añadir el contenedor al div de conteo
+                    conteoVotosDiv.appendChild(contenedor);
+                }
+            } catch (error) {
+                console.error("Error al obtener los votos:", error);
+            }
+        }
+
+        // Llamar a la función para obtener el conteo de votos inicialmente
+        obtenerConteoVotos();
+
+        // Actualizar el conteo de votos cada 30 segundos
+        setInterval(obtenerConteoVotos, 30000); // 30 segundos
+    </script>
+</body>
+</html>

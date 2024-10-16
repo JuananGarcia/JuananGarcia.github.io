@@ -1,0 +1,52 @@
+/* Estilo general del body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cambiado a min-height para asegurar que todo el contenido esté visible */
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal centrado */
+.container {
+    text-align: center;
+    color: white;
+    flex: 1;
+    padding-top: 50px; /* Añade espacio para evitar que el logo se corte */
+}
+
+/* Estilo del logo centrado */
+.logo {
+    width: 350px; /* Tamaño del logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Estilo del texto "PRÓXIMAMENTE" */
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+/* Estilo del GIF animado */
+.gif {
+    width: 100px; /* Tamaño del GIF */
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Contenedor para las redes sociales */
+.social-media {
+    margin-top: 30px;
+    margin-bottom: 30px; /* Aumentado para que no quede tan pegado al borde */
+}
+
+/* Estilo del ícono de Instagram */
+.instagram-icon {
+    width: 40px; /* Tamaño del ícono de Instagram */
+    height: auto;
+}
